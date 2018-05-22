@@ -81,7 +81,7 @@ KL_terms = []
 # train
 for i in range(num_iters):
     x_batch = np.round(mnist.train.next_batch(200)[0])
-    # sess.run(optimizer, feed_dict={X: x_batch})
+    sess.run(optimizer, feed_dict={X: x_batch})
     if (i % rec_interval == 0):
         vlb = var_low_bound.eval(feed_dict={X: x_batch})
         print('Iter: {}, Loss: {}'.format(i, vlb))
